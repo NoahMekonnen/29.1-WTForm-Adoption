@@ -59,6 +59,7 @@ def detail(pet_id):
 
         return redirect('/')
     else:
+        raise
         return render_template('pet_detail.html',pet=pet,form=form)
 
 
