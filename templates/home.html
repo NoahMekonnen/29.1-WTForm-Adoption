@@ -5,7 +5,7 @@
 {% block content %}
 
 {% for pet in pets %}
-    <p>{{pet.name}}</p>
+    <a href="/{{pet.id}}"><p>{{pet.name}}</p></a>
     <img src="{{pet.photo_url}}">
     {% if pet.available == True %}
         <p>Available</p>

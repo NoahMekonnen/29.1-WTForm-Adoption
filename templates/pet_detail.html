@@ -5,7 +5,7 @@
 {% block content %}
     <p>Name: {{pet.name}}</p>
     <p>Species: {{pet.species}}</p>
-    {% if photo.photo_url %}
+    {% if pet.photo_url %}
     <p>Photo: <img src="{{pet.photo_url}}"></p>
     {% endif %}
     {% if pet.age %}

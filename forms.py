@@ -1,7 +1,7 @@
 from random import choices
 from flask_wtf import FlaskForm
 from wtforms import StringField, FloatField, URLField, BooleanField,SelectField,IntegerField
-from wtforms.validators import InputRequired, Optional, Email,NumberRange
+from wtforms.validators import NumberRange
 class PetForm(FlaskForm):
     name = StringField("Name")
     species = SelectField("Species", choices =[('cat','cat'),('dog','dog'),('por','porcupine')])

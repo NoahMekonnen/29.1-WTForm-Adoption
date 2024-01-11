@@ -18,13 +18,16 @@ db.create_all()
 
 @app.route('/')
 def show_pets():
+    """Showing all the pets"""
     pets = Pet.query.all()
     return render_template('home.html',pets=pets)
 
 @app.route('/add', methods=['GET','POST'])
 def add_pet():
+    """Showing add pet form adding pet"""
     form = PetForm()
     print(form, "this is the value")
+    # if post request add pet 
     if form.validate_on_submit():
         name = form.name.data
         species = form.species.data
@@ -38,13 +41,14 @@ def add_pet():
 
         return redirect('/')
     else:
-        print("HEYYYYYYYYYYYY")
         return render_template('add_pet.html',form=form)
     
 @app.route('/<int:pet_id>', methods=['GET','POST'])
-def detail(pet_id):
+def pet_detail(pet_id):
+    """Showing detail of each pet"""
     pet = Pet.query.get(pet_id)
     form = EditPetForm(obj=pet)
+    # if post request edit pet info
     if form.validate_on_submit():
         photo_url = form.photo_url.data
         notes = form.notes.data
@@ -59,7 +63,7 @@ def detail(pet_id):
 
         return redirect('/')
     else:
-        raise
+
         return render_template('pet_detail.html',pet=pet,form=form)
 
 
