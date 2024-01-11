@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Pet{% endblock %}
+
+{% block content %}
+    <form action="/add">
+        <label for="name">Name</label>
+        <input type="text" name = "name" id="name">
+        <label for="species">Species</label>
+        <input type="text" name="species" id="species">
+        <label for="photo_url">Photo Url</label>
+        <input type="text" name="photo_url" id="photo_url">
+        <label for="age">Age</label>
+        <input type="text" name="age" id="age">
+        <label for="notes">Notes</label>
+        <input type="text" name="notes" id="notes">
+        <button>Submit</button>
+    </form>
+{% endblock %}
